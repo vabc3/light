@@ -18,9 +18,7 @@ impl ChessBoard {
                         Some(val) => {val},
                         _ => { self.places[j] - self.places[i] }
                     };
-                //println!("i={},j={},abs={}",i,j,abs);
-                if abs ==0 || (j-i) as u8 == abs {
-                    // println!("i={},j={}",i,j);
+                if abs == 0 || (j-i) as u8 == abs {
                     br = true;break;
                 }
             }
@@ -55,28 +53,24 @@ fn main() {
         let mut current: usize = 0;
         let mut new = true;
         loop {
-            match current as u8{
-                x if x >= board.size => {
-                    println!("found!");
-                    println!("{}", board);
-                    current -= 1;
+            if current >= board.size as usize {
+                println!("found!\n{}",board);
+                current -= 1;
+                new = false;
+            } else {
+                if new {
+                    board.places[current] = 0;
                     new = false;
+                } else {
+                    board.places[current] += 1;
                 }
-                _ => {
-                    if new {
-                        board.places[current] = 0;
-                        new = false;
-                    } else {
-                        board.places[current] += 1;
-                    }
 
-                    if board.places[current] >= board.size {
-                        if current == 0 { break; }
-                        current -= 1;
-                    } else if board.valid(current) {
-                        current += 1;
-                        new = true;
-                    }
+                if board.places[current] >= board.size {
+                    if current == 0 { break; }
+                    current -= 1;
+                } else if board.valid(current) {
+                    current += 1;
+                    new = true;
                 }
             }
         }

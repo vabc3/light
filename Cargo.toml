@@ -5,6 +5,8 @@ authors = ["Karata <vabc3h@gmail.com>"]
 
 [[bin]]
 name= "w_clientb"
-path="src/client.rs"
+path1="src/client.rs"
+path="src/client_local.rs"
 
 [dependencies]
+hyper="0.7.2"

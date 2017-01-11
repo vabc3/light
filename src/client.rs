@@ -1,24 +1,19 @@
-// enum Body {
-//     A,B
-// }
+extern crate hyper;
 
-struct Client {
-}
+use hyper::client::Body;
+use hyper::Client;
 
-impl Client {
-    fn new() -> Client {
-        Client{}
-    }
-    fn get(self: &Client) -> Build {
-        Build {}
-    }
-}
-
-struct Build {
+fn run () -> Result<hyper::client::Response,hyper::Error> {
+    let a = vec![1];
+    let b = Body::BufBody(&a,1);
+    let client = Client::new();
+    let mut builder = client.get("d");
+    builder = builder.body(b);
+    builder.send()
+    // builder.body(b).send()
 }
 
 fn main() {
-    let client = Client::new();
-    client.get();
-    println!("23");
+    let x = run().unwrap();
+    println!("{:?}",x);
 }

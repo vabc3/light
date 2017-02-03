@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Karata <vabc3h@gmail.com>"]
 
 [[bin]]
-name= "w_clientb"
+name= "w2_clientb"
 path1="src/client.rs"
 path="src/client_local.rs"
 

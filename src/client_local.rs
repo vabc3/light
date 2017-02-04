@@ -1,32 +1,18 @@
-use std::io::Read;
-use std::fs::File;
-
+trait T1 {}
 enum Body<'a> {
-    // SizedBody(&'a mut (Read + 'a)),
-    BufBody(&'a mut i32),
+    SizedBody(&'a mut (T1 + 'a)),
+    BufBody,
 }
 struct Client {}
-struct Build<'a> {
+struct Builder<'a> {
     client: &'a Client,
-    body: Option<Body<'a>>,
 }
-impl<'a> Build<'a> {
-    fn body(&mut self, a1: Body<'a>) {
-        self.body = Some(a1);
-    }
+impl<'a> Builder<'a> {
+    fn body(&mut self, _: Body<'a>) {}
 }
-
 fn main() {
-    // let mut f = File::open("foo.txt").unwrap();
-    // let b = Body::SizedBody(&mut f);
-    let mut x = 7i32;
-    let b = Body::BufBody(&mut x);
+    let b = Body::BufBody;
     let client = Client {};
-    let mut builder = Build {
-        client: &client,
-        body: None,
-    };
-    {
-        builder.body(b);
-    }
+    let mut builder = Builder { client: &client };
+    builder.body(b);
 }

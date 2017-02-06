@@ -6,8 +6,9 @@ authors = ["Karata <vabc3h@gmail.com>"]
 [[bin]]
 name= "w2_clientb"
 # path1="src/client.rs"
-path="src/client_local.rs"
+# path="src/client_local.rs"
 # path3="src/closure.rs"
+path="src/copy.rs"
 
 [dependencies]
 hyper="0.7.2"

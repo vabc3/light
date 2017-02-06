@@ -1,11 +1,11 @@
 Pending..
 
 Normal
-\\|Immutable|Mutable
--|-|-|
+
+A | Immutable | Mutable
+------- | ---- | ----
 Unique|Box|Rc
 Shared|Cell|RefCell
-
 
 
 Synchronous

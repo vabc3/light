@@ -8,7 +8,8 @@ name= "w2_clientb"
 # path1="src/client.rs"
 # path="src/client_local.rs"
 # path3="src/closure.rs"
-path="src/parallel.rs"
+# path="src/parallel.rs"
+path="src/pg.rs"
 
 [dependencies]
 hyper="0.7.2"

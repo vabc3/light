@@ -3,15 +3,15 @@ Pending..
 Normal
 \\|Immutable|Mutable
 -|-|-|
-Unique|Box|Rc
-Shared|Cell|RefCell
+Unique|Box|Cell
+Shared|Rc|RefCell
 
 
 
 Synchronous
 \\|Immutable|Mutable
 -|-|-
-Unique||Arc
-Shared||
+Unique||
+Shared|Arc|
 
 

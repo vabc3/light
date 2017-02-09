@@ -3,13 +3,13 @@ name = "w"
 version = "0.1.0"
 authors = ["Karata <vabc3h@gmail.com>"]
 
-[[bin]]
-name= "w2_clientb"
+# [[bin]]
+# name= "w2_clientb"
 # path1="src/client.rs"
 # path="src/client_local.rs"
 # path3="src/closure.rs"
 # path="src/parallel.rs"
-path="src/pg.rs"
+# path="src/pg.rs"
 
 [dependencies]
 hyper="0.7.2"

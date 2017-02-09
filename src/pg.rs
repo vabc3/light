@@ -1,4 +1,6 @@
 // playground
+#![allow(dead_code)]
+#![allow(unused_variables)]
 #![feature(unique)]
 use std::ptr::Unique;
 trait T1 {}
@@ -27,18 +29,43 @@ impl<T> Q<T> {
             // !0 is usize::MAX. This branch should be stripped at compile time.
 
             // heap::EMPTY doubles as "unallocated" and "zero-sized allocation"
-            Q {
-                a: Unique::new(3 as *mut T),
-            }
+            Q { a: Unique::new(3 as *mut T) }
         }
     }
 }
 
-fn main() {
-    let a = Vec::new();
+fn main1() {
+    // let mut a = Vec::new();
+    // a.push(3i32);
+    // a.push(5u16);
+    // a=3;
     // a=7;
     // run(&a);
-     run2(&a);
-   // let b = Q::new();
+    //  run2(&a);
+    // let b = Q::new();
+}
 
+struct A {}
+struct Cat : A {}
+
+trait B {
+    fn b1(&self);
+}
+impl A {
+    fn b1(&self) {
+        println!("A_b1");
+    }
+}
+
+impl B for A {
+    fn b1(&self) {
+        println!("B_for_A_b1");
+    }
+}
+
+fn main() {
+    let a = A {};
+    a.b1();
+    let b: & B = &a;
+    b.b1();
 }

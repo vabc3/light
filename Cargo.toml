@@ -3,8 +3,10 @@ name = "w"
 version = "0.1.0"
 authors = ["Karata <vabc3h@gmail.com>"]
 
-# [[bin]]
-# name= "w2_clientb"
+[[bin]]
+name= "w2_clientb"
+path="src/thread.rs"
+
 # path1="src/client.rs"
 # path="src/client_local.rs"
 # path3="src/closure.rs"

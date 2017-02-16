@@ -5,7 +5,8 @@ authors = ["Karata <vabc3h@gmail.com>"]
 
 [[bin]]
 name= "w2_clientb"
-path="src/thread.rs"
+# path="src/thread.rs"
+path="src/forenum.rs"
 
 # path1="src/client.rs"
 # path="src/client_local.rs"

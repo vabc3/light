@@ -6,8 +6,8 @@ authors = ["Karata <vabc3h@gmail.com>"]
 [[bin]]
 name= "w2_clientb"
 # path="src/thread.rs"
-path="src/traiti.rs"
-
+# path="src/associate_type.rs"
+path="src/edi.rs"
 # path1="src/client.rs"
 # path="src/client_local.rs"
 # path3="src/closure.rs"
@@ -16,3 +16,4 @@ path="src/traiti.rs"
 
 [dependencies]
 hyper="0.7.2"
+byteorder = "1"
